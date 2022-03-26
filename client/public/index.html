@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="">
+    <title>
+      Amazing Blog
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Ope/assets/img/favicon.pngn+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="/assets/css/soft-ui-dashboard.css?v=1.0.4" rel="stylesheet" />
+  <style>
+    
+    .a{
+      margin-right: auto;
+    }
+    .span {
+      display: flex; float: right
+    }
+    .imgs{
+      height: 300px; width: 100%;
+    }
+    .link{
+      text-decoration: none;
+      color: inherit;
+    }
+    body{
+      background-color: #f8f9fa !important;
+    }
+    .profileImg{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    .error{
+      color: rgb(0, 0, 0);
+    }
+    .message{
+      color: rgb(39, 182, 39);
+    }
+    .loginBtn {
+      cursor: not-allowed;
+      background-color: beige;
+    }
+    .logout{
+      cursor: pointer;
+    }
+    .create-imgs{
+      height: 150px; width: 100%;
+    }
+  
+  </style>
+    <!-- CSS Files -->
+          <!-- General JS Scripts -->
+        <!-- <script src="/src/src/assets/js/app.min.js"></script> -->
+        <!-- JS Libraies -->
+        <!-- <script src="../src/assets/bundles/apexcharts/apexcharts.min.js"></script> -->
+        <!-- Page Specific JS File -->
+        <!-- <script src="../src/assets/js/page/index.js"></script> -->
+        <!-- Template JS File -->
+        <!-- <script src="../src/assets/js/scripts.js"></script> -->
+        <!-- Custom JS File -->
+        <!-- <script src="../src/assets/js/custom.js" type="text/javascript"></script> -->
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <!--   Core JS Files   -->
+  <script src="/assets/js/core/popper.min.js"></script>
+  <script src="/assets/js/core/bootstrap.min.js"></script>
+  <script src="/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/assets/js/soft-ui-dashboard.min.js?v=1.0.4"></script>
+  </body>
+</html>
