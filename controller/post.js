@@ -12,7 +12,9 @@ const getPosts = async(req, res, next) => {
         } else {
             posts = await Post.find().sort({createdAt: -1})
         }
-        posts.length <=0 && res.status(400).json({message:"No post found"})
+        if (posts.length <=0) {
+            return res.status(400).json({message:"No post found"})
+        }
         return res.status(200).json({data: posts})
     } catch (error) {
         error.status = 500
@@ -23,7 +25,9 @@ const getPosts = async(req, res, next) => {
 const singlePost =  async(req, res, next) => {
     const post = await Post.findOne({_id: req.params.postId})
     try {
-            post === null && res.status(400).json({message:"No post found"})
+            if (post === null) {
+                return res.status(400).json({message:"No post found"})
+            }
             return res.status(200).json({data: post})
     } catch (error) {
         error.status = 500
@@ -56,7 +60,9 @@ const createPost =  async(req, res, next) => {
 const updatePost =  async(req, res, next) => {
     const post = await Post.findOne({_id: req.params.postId})
     try {
-            post === null && res.status(400).json({message:"No post found"})
+            if (post === null) {
+                return res.status(400).json({message:"No post found"})
+            }
             post.title =  req.body.title
             post.desc = req.body.desc
             // post.image ="image"
@@ -76,9 +82,11 @@ const updatePost =  async(req, res, next) => {
 const deletePost = async(req, res, next) => {
     try {
         const post = await Post.findByIdAndDelete(req.params.postId)
-        post === null && res.status(400).json({
+        if (post === null) {
+            return res.status(400).json({
             message: "Post with this Id not found"
-        })
+            })
+        }
         return res.status(200).json({
             message: "Deleted"
         })

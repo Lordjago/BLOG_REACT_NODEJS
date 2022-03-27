@@ -40,7 +40,9 @@ const login = async (req, res, next) => {
         .json({ message: "No User found with this credential" });
     }
     const validate = await bcrypt.compare(req.body.password, user.password)
-    !validate && ( res.status(403).json({message: "Invalid password"}))
+    if (!validate) {
+      return res.status(403).json({message: "Invalid password"})
+    }
     
     const accessToken = jwt.sign({userId: user._id, email: user.email}, process.env.ACCESS_TOKEN, {expiresIn: '1h'} )
     const { password, ...others } = user._doc;

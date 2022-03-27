@@ -9,9 +9,11 @@ const getUser = async (req, res, next) => {
     const username = "john"
     const user = await User.findOne({username})
     try {
-        user === null && res.status(400).json({
+        if (user === null) {
+            return res.status(400).json({
             message: "No User Found"
-        })
+            })
+        }
         return res.status(200).json({data: user})
     } catch (error) {
         error.status = 500
@@ -25,9 +27,11 @@ const updateUser = async (req, res, next) => {
     const userId = req.body.userId
     const user = await User.findById({_id: userId})
     try {
-        user === null && res.status(400).json({
+        if (user === null) {
+            return res.status(400).json({
             message: "No User Found"
-        })
+             })
+        }
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(req.body.password, salt)
         // user.username = req.body.username

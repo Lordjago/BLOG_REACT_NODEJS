@@ -18,9 +18,9 @@ const createCategory = async (req, res, next) => {
 const getCategories = async (req, res, next) => {
     const category = await Category.find()
     try {
-        category.length <= 0 && res.status(404).json({message: "No Category Found"})
-        
-        
+        if (category.length <= 0) {
+            return res.status(404).json({message: "No Category Found"})
+        }
         return res.status(200).json({
             message: "Category",
             data: category
