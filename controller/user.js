@@ -20,7 +20,6 @@ const getUser = async (req, res, next) => {
         next(error)
     }
 }
-
 //Update user
 
 const updateUser = async (req, res, next) => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Post from "../../components/post/Post";
-import axios from "axios";
+// import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { axiosInstance } from "../../config";
 
